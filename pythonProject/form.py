@@ -1,11 +1,3 @@
-# Explicación en Formato Sencillo
-# Paso 1: Buscar propiedades
-# Explica que el script se conecta a una página web que lista propiedades disponibles.
-# Paso 2: Recoger la información
-# El programa automáticamente extrae datos importantes como los enlaces de las propiedades, direcciones y precios.
-# Paso 3: Llenar el formulario
-# Después, esta información se envía a un formulario de Google de manera automática, sin que la persona tenga que hacerlo manualmente.
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -107,6 +99,11 @@ try:
             break
 
         index += 1
+
+except Exception as e:
+    # Imprime un mensaje de error si algo sale mal
+    print(f"Error: {e}")
+    print("El proceso no se llevó a cabo completamente porque el navegador se cerró inesperadamente.")
 
 finally:
     # Cierra el navegador después de completar el proceso
